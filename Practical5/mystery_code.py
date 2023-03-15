@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer:
+# Answer: print the maximum of the random integers between 1 and 100 which were generated in 10 times
 
 # Import libraries
 # randint allows drawing a random number,
@@ -13,9 +13,9 @@ from math import ceil
 progress=0
 stored_random_number=0
 while progress<10:
-	progress+=1
+	progress+=1 #progress is a variable to control the cycle runing for 10 times
 	n = randint(1,100)
 	if n > stored_random_number:
-		stored_random_number = n
+		stored_random_number = n #stored_random_number always store the maximum of all n
 
 print(stored_random_number)
