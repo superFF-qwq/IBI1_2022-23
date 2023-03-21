@@ -6,13 +6,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.boxplot(costs,
 	widths = 0.6,
-	vert = True,
+	vert = False,
 	whis = 1.5,
 	patch_artist = True,
 	meanline = False,
 	showbox = True,
 	showcaps = True,
 	showfliers = True,
-	notch = True
+	notch = False
 	)
 plt.show()
