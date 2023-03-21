@@ -5,6 +5,7 @@ print(costs)
 import numpy as np
 import matplotlib.pyplot as plt
 plt.boxplot(costs,
+	widths = 0.6,
 	vert = True,
 	whis = 1.5,
 	patch_artist = True,
@@ -12,6 +13,6 @@ plt.boxplot(costs,
 	showbox = True,
 	showcaps = True,
 	showfliers = True,
-	notch = False
+	notch = True
 	)
 plt.show()
