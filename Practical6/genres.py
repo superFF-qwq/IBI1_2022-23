@@ -9,5 +9,7 @@ plt.axis('equal')
 plt.show
 
 genres = {'Comedy':73, 'Action':42, 'Romance':38, 'Fantasy':28, 'Science-fiction':22, 'Horror':19, 'Crime':18, 'Documentary':12, 'History':8, 'War': 7}
-ans = genre[input]
+
+input='Comedy' # input is a variable that stores the input string.
+ans = genres[input]
 print(ans)
