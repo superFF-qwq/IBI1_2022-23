@@ -1,0 +1,19 @@
+fig.boxplot((data, data), # 数据
+positions=[1, 4],# 放置在x轴的位置
+widths=1.5,# 指定箱线图的宽度
+notch=False, # 是否是凹口的形式展现箱线图，默认非凹口
+vert=True# 是否需要将箱线图垂直摆放，默认垂直摆放
+meanline=True,# 是否用线的形式表示均值，默认用点来表示
+patch_artist=True,# 是否填充箱体
+showmeans=True, # 是否显示均值
+showcaps=True, # 是否显示箱线图顶端和末端的两条线，默认显示
+showfliers=True,# 是否显示异常值
+showbox=True, # 是否显示箱线图的箱体，默认显示
+meanprops = {"color": "black", "linewidth": 1.5}, # 设置平均线的属性，如线的类型、粗细等
+medianprops={"color": "red", "linewidth": 0.5},# 设置中位数的属性，如线的类型、粗细等
+boxprops={"facecolor": "C0", "edgecolor": "black","linewidth": 0.5, "alpha":0.4},# 设置箱体的属性，如边框色，填充色等
+whiskerprops={"color": "black", "linewidth": 1.5, "alpha":0.8}, # 设置须的属性，如颜色、粗细、线的类型等 capprops={"color": "C0", "linewidth": 1.5}, # 设置箱线图顶端和末端线条的属性，如颜色、粗细等
+sym="+",# 异常点的形状 )
+fig.set_xticks([1, 4])# 对应坐标1 4的位置换成下面的标签
+fig.set_xticklabels(["箱线图", "箱线图2"])
+plt.show()
