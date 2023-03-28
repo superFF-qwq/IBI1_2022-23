@@ -1,0 +1,8 @@
+Plot a boxplot of total case numbers in different countries on 31 March 2020.
+Line number: 74 - 89
+Discussion:
+The median is closer to Q1 than to Q3.
+From the boxplot, we can tell that there is a great degree of data volatility, which means there is a great degree of data volatility in total case numbers in different countries on 31 March 2020.
+There are outliers in the data.
+However, in order to make the graph more clear to see, I do not show the outliers.
+It means there is a country whose total case number on 31 March 2020 is greatly different from other countries.
