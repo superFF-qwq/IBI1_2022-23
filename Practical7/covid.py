@@ -59,17 +59,22 @@ plt.boxplot([new_data["new_cases"],new_data["new_deaths"]],
 	showcaps = True,
 	showfliers = False,
 	notch = False,
-	labels = ["new_cases","new_deaths"])
+	labels = ["new cases","new deaths"])
+plt.ylabel("case number")
+plt.title("new cases and new deaths on 31 March 2020")
 plt.show()	######portfolio task5 : draw a boxplot
 
-world_dates = covid_data["date"]
-world_new_cases = covid_data["new_cases"]
-plt.plot(world_dates,world_new_cases,'bo')
+world_dates = covid_data.loc[covid_data["location"]=="World","date"]
+world_new_cases = covid_data.loc[covid_data["location"]=="World","new_cases"]
+world_new_deaths = covid_data.loc[covid_data["location"]=="World","new_deaths"]
+plt.plot(world_dates,world_new_cases,'o',color='red',markersize=1,label="world new cases")
+plt.plot(world_dates,world_new_deaths,'o',color='blue',markersize=1,label="world new deaths")
+plt.legend()
 plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
-plt.title("new cases in the world")
+plt.title("new cases and new deaths in the world")
 plt.xlabel("date")
-plt.ylabel("cases")
-plt.show()	######profolio task6 : draw a boxplot
+plt.ylabel("case number")
+plt.show()	######profolio task6 : draw a plot
 
 cases = covid_data.loc[covid_data["date"]=="2020-03-31","total_cases"]
 #print(cases)
@@ -84,6 +89,7 @@ plt.boxplot(cases,
 	showcaps = True,
 	showfliers = False,
 	notch = False)
+plt.xticks([1],["date:2020-03-31"])
 plt.title("total cases in different countries")
-plt.xlabel("date:2020-03-31")
+plt.ylabel("case number")
 plt.show()	######profolio task7 : answer the question
