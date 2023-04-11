@@ -14,20 +14,20 @@ list = []
 ans = []
 
 for line in xfile:
-    if line.startswith('>'):
+    if line.startswith('>'): ##when meeting a '>', it means maybe a DNA ends, and exactly a DNA begins.
         if len(list)>0:
             seq = ''
             for i in list:
-                seq += i[:-1]
+                seq += i[:-1] ## seq saves the gene sequence
             if re.search(codon+'$', seq):
-                fout.write(genename.group()+'\n')
+                fout.write(genename.group()+'\n') ##check if the DNA ends with the specific stop codon
                 fout.write(seq+'\n')
             startposition = seq.find('ATG')
-            count = len(re.findall(codon, seq[startposition:]))
+            count = len(re.findall(codon, seq[startposition:])) ##find the specific stop codon after the start codon
             ans.append(genename.group()+' '+str(count))
         genename = re.match(r'>\S+', line)
         list.clear()
-    if re.search('[AGCT]$',line):
+    if re.search('[AGCT]$',line): ##check if we are at a gene sequence line
         list.append(line)
 
 if len(list)>0:
