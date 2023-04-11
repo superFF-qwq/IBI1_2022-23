@@ -15,10 +15,10 @@ list = []
 
 for line in xfile:
     if line.startswith('>'):
-        if(len(list)>0 and re.search('TGA\n$',list[-1])):
+        if len(list)>0 and re.search('TGA\n$',list[-1]):
             fout.write(genename.group()+'\n')
             for i in list:
-                fout.write(i[-1])
+                fout.write(i[:-1])
             fout.write('\n')
         genename = re.match(r'>\S+', line)
         list.clear()
@@ -27,10 +27,10 @@ for line in xfile:
 
 ## do not forget to deal with the last gene sequence
 
-if(len(list)>0 and re.search('TGA\n$',list[-1])):
+if len(list)>0 and re.search('TGA\n$',list[-1]):
     fout.write(genename.group()+'\n')
     for i in list:
-        fout.write(i)
+        fout.write(i[:-1])
     fout.write('\n')
 
 fout.close()
