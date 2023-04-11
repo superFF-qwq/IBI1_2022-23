@@ -1,6 +1,6 @@
 import re
 
-xfile = open('C:/Users/Lenovo/Downloads/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa', 'r')
+xfile = open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa', 'r')
 fout = open('TGA_genes.fa', 'w')
 
 ##length = 0
@@ -18,7 +18,8 @@ for line in xfile:
         if(len(list)>0 and re.search('TGA\n$',list[-1])):
             fout.write(genename.group()+'\n')
             for i in list:
-                fout.write(i)
+                fout.write(i[-1])
+            fout.write('\n')
         genename = re.match(r'>\S+', line)
         list.clear()
     if re.search('[AGCT]$',line):
@@ -30,5 +31,6 @@ if(len(list)>0 and re.search('TGA\n$',list[-1])):
     fout.write(genename.group()+'\n')
     for i in list:
         fout.write(i)
+    fout.write('\n')
 
 fout.close()
