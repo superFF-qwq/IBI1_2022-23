@@ -33,4 +33,7 @@ if len(list)>0 and re.search('TGA\n$',list[-1]):
         fout.write(i[:-1])
     fout.write('\n')
 
+if xfile:
+    xfile.close()
+
 fout.close()
