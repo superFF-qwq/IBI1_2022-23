@@ -44,4 +44,7 @@ if len(list)>0:
 for i in ans:
     fout.write(i[1:]+'\n')
 
+if xfile:
+    xfile.close()
+
 fout.close()
