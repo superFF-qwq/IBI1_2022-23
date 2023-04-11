@@ -24,4 +24,11 @@ for line in xfile:
     if re.search('[AGCT]$',line):
         list.append(line)
 
+## do not forget to deal with the last gene sequence
+
+if(len(list)>0 and re.search('TGA\n$',list[-1])):
+    fout.write(genename.group()+'\n')
+    for i in list:
+        fout.write(i)
+
 fout.close()
