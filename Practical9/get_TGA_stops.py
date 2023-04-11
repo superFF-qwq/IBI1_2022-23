@@ -14,15 +14,15 @@ fout = open('TGA_genes.fa', 'w')
 list = []
 
 for line in xfile:
-    if line.startswith('>'):
-        if len(list)>0 and re.search('TGA\n$',list[-1]):
+    if line.startswith('>'): ##when meeting a '>', it means may a DNA ends, and exactly a DNA starts.
+        if len(list)>0 and re.search('TGA\n$',list[-1]): ##check the last DNA
             fout.write(genename.group()+'\n')
             for i in list:
                 fout.write(i[:-1])
             fout.write('\n')
-        genename = re.match(r'>\S+', line)
+        genename = re.match(r'>\S+', line) ##save the current DNA name
         list.clear()
-    if re.search('[AGCT]$',line):
+    if re.search('[AGCT]$',line): ##check if we are at the sequence line
         list.append(line)
 
 ## do not forget to deal with the last gene sequence
