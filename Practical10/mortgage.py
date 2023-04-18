@@ -2,6 +2,7 @@
 
 def checkpurchase(cost, salary):
     return cost <= salary*5
+## define a function to check the relationship between salary and cost
 
 value = 180000
 salary = 35000
