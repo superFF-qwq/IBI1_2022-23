@@ -1,0 +1,12 @@
+ACE2_human ACE2_mouse
+alignment score: 3579
+percentage of identical amino acids: 82.111801%
+
+ACE2_human ACE2_cat
+alignment score: 3717
+percentage of identical amino acids: 85.217391%
+
+ACE2_mouse ACE2_cat
+alignment score: 3592
+percentage of identical amino acids: 81.739130%
+
